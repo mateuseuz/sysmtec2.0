@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from '../../services/api';
-import { formatCPForCNPJ, formatCelular } from '../../utils/validations'; // Verifique o caminho correto
+import { formatCPForCNPJ, formatCelular } from '../../utils/validations';
 import '../../styles/Clientes.css';
 
 function ListaClientes() {
@@ -48,7 +48,7 @@ function ListaClientes() {
           <ul>
             <li><Link to="/agenda"><span>🗓️</span>Agenda</Link></li>
             <li className="active"><Link to="/clientes"><span>👥</span>Clientes</Link></li>
-            <li><Link to="/projetos"><span>🛠️</span>Ordens de Serviço</Link></li>
+            <li><Link to="/ordens-servico"><span>🛠️</span>Ordens de Serviço</Link></li>
             <li><Link to="/orcamentos"><span>📄</span>Orçamentos</Link></li>
             <li><Link to="/log"><span>📋</span>Log de alterações</Link></li>
           </ul>
@@ -92,8 +92,8 @@ function ListaClientes() {
                     <td>{formatCelular(cliente.celular) || '-'}</td>
                     <td className="actions-cell">
                       <Link
-                        to={`/clientes/visualizar/${cliente.id_cliente}`} // Defina a rota correta se for diferente
-                        className="view-button" // Nova classe para o botão de visualização
+                        to={`/clientes/visualizar/${cliente.id_cliente}`}
+                        className="view-button"
                         title="Visualizar cliente"
                       >
                         🔎
