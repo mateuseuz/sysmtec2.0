@@ -134,12 +134,13 @@ function CadastroOrdemServico() {
 
         <form onSubmit={handleSubmit} className="cliente-form">
           <div className="form-group">
-            <label>Nome do projeto/serviço *</label>
+            <label>Nome *</label>
             <input
               type="text"
               name="nome"
               value={formData.nome}
               onChange={handleChange}
+              placeholder="Nome do projeto/serviço"
               className={errors.nome ? 'error' : ''}
             />
           </div>
@@ -202,6 +203,7 @@ function CadastroOrdemServico() {
               name="observacoes"
               value={formData.observacoes}
               onChange={handleChange}
+              placeholder="Observações sobre a ordem de serviço"
               maxLength="500"
             />
           </div>
